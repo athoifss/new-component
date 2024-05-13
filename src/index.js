@@ -68,6 +68,10 @@ export * from './${componentName}';
 export { default } from './${componentName}';
 `);
 
+const cssFilePath = `${componentDir}/${componentName}.module.scss`;
+const cssTemplate = `/* Styles for ${componentName} */\n\n.${componentName} {\n  /* Add your styles here */\n}`;
+
+
 logIntro({
   name: componentName,
   dir: componentDir,
@@ -118,6 +122,14 @@ mkDirPromise(componentDir)
     // We also need the `index.js` file, which allows easy importing.
     writeFilePromise(indexPath, prettify(indexTemplate))
   )
+  .then(() => {
+    // Write the CSS file
+    return writeFilePromise(cssFilePath, cssTemplate);
+  })
+  .then(() => {
+    logItemCompletion('CSS file built and saved to disk.');
+    // Continue with creating the index file
+  })
   .then((template) => {
     logItemCompletion('Index file built and saved to disk.');
     return template;
