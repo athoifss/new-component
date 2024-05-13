@@ -70,7 +70,7 @@ export { default } from './${componentName}';
 
 const wrapperClassName = `wrapper`
 const cssFilePath = `${componentDir}/${componentName}.module.scss`;
-const cssTemplate = `/* Styles for ${componentName} */\n\n.${wrapperClassName} {\n  /* Add your styles here */\n}`;
+const cssTemplate = `@import "~utils/vars.scss";\n\n.${wrapperClassName} {\n  /* Add your styles here */\n}`;
 
 
 logIntro({
