@@ -32,7 +32,7 @@ module.exports.getConfig = () => {
 
   const defaults = {
     lang: 'js',
-    dir: 'src/components-page',
+    dir: 'src/component-pages',
   };
 
   const globalOverrides = requireOptional(

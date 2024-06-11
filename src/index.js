@@ -42,7 +42,7 @@ program
   )
   .option(
     '-d, --dir <pathToDirectory>',
-    'Path to the "components" directory (default: "src/components")',
+    'Path to the "components" directory (default: "src/component-pages")',
     config.dir
   )
   .parse(process.argv);
